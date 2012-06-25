@@ -27,6 +27,11 @@ describe PagesController do
       get 'about'
       response.should be_success
     end
+
+    it "should have a default title given no @title be set" do
+      get 'about'
+      response.should have_selector("title", content: "MyWeb Page Title")
+    end
   end
 
 end
