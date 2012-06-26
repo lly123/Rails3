@@ -32,6 +32,11 @@ describe PagesController do
       get 'about'
       response.should have_selector("title", content: "MyWeb Page Title")
     end
+
+    it "should have a footer" do
+      get 'about'
+      response.should have_selector("body", content: "-- Footer --")
+    end
   end
 
 end
