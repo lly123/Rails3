@@ -1,9 +1,12 @@
 Myweb::Application.routes.draw do
+
   get "pages/home"
-
   get "pages/contact"
-
   get "pages/about"
+
+  match '/home' => 'pages#home', :via => "get"
+
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
